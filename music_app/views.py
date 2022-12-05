@@ -32,20 +32,24 @@ def deleteArtist(request, pk):
     artist.delete()
     return redirect('/artists')
 
-# class SongListView(ListView):
-#     model = Song
-#     context_object_name = 'songs'
-#     template_name = 'list_songs.html'
+class SongListView(ListView):
+    model = Song
+    context_object_name = 'songs'
+    template_name = 'list_songs.html'
 
-# class SongCreateView(CreateView):
-#   model = 'Songs'
-#   form_class = SongForm
-#   template_name = 'add_song.html'
-# success_url = reverse_lazy('songs')
+class SongCreateView(CreateView):
+    model = 'Songs'
+    form_class = SongForm
+    template_name = 'add_song.html'
+    success_url = reverse_lazy('songs')
 
-# class SongUpdateView(UpdateView):
-#     model = Song
-#     form_class = SongForm
-#     template_name = 'edit_song.html'
-# success_url = reverse_lazy('songs')
+class SongUpdateView(UpdateView):
+    model = Song
+    form_class = SongForm
+    template_name = 'edit_song.html'
+    success_url = reverse_lazy('songs')
 
+def deleteSong(request, pk):
+    song = Song.objects.get(id=pk)
+    song.delete()
+    return redirect('/songs')

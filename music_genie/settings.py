@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'music_app.apps.MusicAppConfig',
     'crispy_forms',
     'crispy_bootstrap5',
-    'music_app.apps.MusicAppConfig',
 ]
 
 MIDDLEWARE = [
